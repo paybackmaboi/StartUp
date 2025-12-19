@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Manrope with full weight range */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-slate-900 dark:text-white bg-background-light dark:bg-background-dark selection:bg-primary selection:text-white;
+  }
+}
+
+/* Custom scrollbar matching the new theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111621;
+}
+::-webkit-scrollbar-thumb {
+  background: #243047;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #195de6;
+}
+
+/* Accordion Utilities */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

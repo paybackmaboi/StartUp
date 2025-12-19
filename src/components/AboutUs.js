@@ -1,172 +1,217 @@
 import React from 'react';
 
 const AboutUs = () => {
+  const founders = [
+    {
+      name: "James Chen",
+      role: "Chief Executive Officer",
+      bio: "Former enterprise architect with a passion for inclusive leadership. James drives the strategic vision of connecting talent with opportunity.",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      name: "Sarah Al-Fayed",
+      role: "Chief Technology Officer",
+      bio: "Expert in assistive technologies and AI. Sarah ensures our platform is technically robust and accessible by design.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+    },
+    {
+      name: "Marcus Thorne",
+      role: "Chief Operating Officer",
+      bio: "Operations veteran focused on sustainable growth and outreach programs that bring real value to the community.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      name: "Elena Rodriguez",
+      role: "Chief Product Officer",
+      bio: "A UX visionary specializing in neurodiverse design patterns. Elena ensures every interaction is intuitive and calming.",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
+    }
+  ];
+
+  const values = [
+    { icon: "diversity_3", title: "Inclusivity", desc: "Designing for all minds, embracing differences as strengths." },
+    { icon: "precision_manufacturing", title: "Precision", desc: "Delivering exact, reliable solutions tailored to specific needs." },
+    { icon: "trending_up", title: "Growth", desc: "Constant evolution of our tools and our understanding." },
+    { icon: "support_agent", title: "Support", desc: "Unwavering dedication to our users' success and comfort." }
+  ];
+
+  const faqItems = [
+    {
+      title: "Specialized Methodology",
+      content: "We don't just build software; we build understanding. Our development methodology integrates feedback from neurodiverse users at every stage, ensuring that the final product is truly accessible and effective."
+    },
+    {
+      title: "Adaptive Tools & Environment",
+      content: "Our solutions feature customizable interfaces that allow users to control sensory inputs, layout density, and notification frequency, creating a personalized workspace that reduces anxiety and boosts focus."
+    },
+    {
+      title: "Commitment to Privacy",
+      content: "We understand the sensitivity of personal data. Our platforms are built with enterprise-grade security and strict privacy protocols to ensure that user information is protected at all times."
+    }
+  ];
+
   return (
-    <div className="flex flex-col w-full bg-background-light dark:bg-background-dark text-[#111418] dark:text-white">
+    <div className="flex flex-col w-full bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
       
       {/* Hero Section */}
-      <section className="px-4 py-8 md:px-40 flex flex-1 justify-center">
-        <div className="flex flex-col max-w-[1200px] flex-1">
-          <div className="@container">
-            <div className="@[480px]:p-4">
-              <div 
-                className="relative flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl overflow-hidden items-center justify-center p-8 md:p-12 shadow-2xl"
-                style={{ 
-                  backgroundImage: `linear-gradient(rgba(21, 34, 17, 0.8), rgba(21, 34, 17, 0.6)), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop")` 
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#152211] to-transparent opacity-80"></div>
-                <div className="relative z-10 flex flex-col gap-4 text-center max-w-[800px]">
-                  <span className="text-primary font-bold tracking-wider uppercase text-sm">Our Purpose</span>
-                  <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl">
-                    Innovating with Empathy
-                  </h1>
-                  <p className="text-gray-200 text-lg md:text-xl font-normal leading-relaxed mt-2">
-                    Bridging the gap between neurodiversity and cutting-edge technology. We are building a digital future that is accessible, inclusive, and excellent by design.
-                  </p>
+      <section className="relative flex min-h-[500px] flex-col justify-center overflow-hidden py-16">
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="h-full w-full bg-cover bg-center" 
+            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop')` }}
+          ></div>
+          <div className="absolute inset-0 bg-background-dark/80 bg-gradient-to-b from-background-dark/90 to-background-dark/70"></div>
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Empowering Neurodiversity Through Technology
+            </h1>
+            <p className="mb-10 text-lg text-slate-300 sm:text-xl">
+              Bridging the gap between specialized talent and technological innovation. We build an inclusive digital world where unique minds thrive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            
+            {/* Mission Card */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-1 shadow-lg ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:ring-primary/50">
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-colors"></div>
+              <div className="flex h-full flex-col p-8">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <span className="material-symbols-outlined text-3xl">rocket_launch</span>
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h3>
+                <p className="mb-8 flex-grow text-slate-600 dark:text-slate-400 leading-relaxed">
+                  To create an inclusive digital world where unique minds thrive. We build tools that adapt to users, not the other way around, fostering an ecosystem of support and innovation.
+                </p>
+                <div className="relative h-48 w-full overflow-hidden rounded-xl">
+                  <img 
+                    alt="Team collaborating" 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                  />
                 </div>
               </div>
             </div>
+
+            {/* Vision Card */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-1 shadow-lg ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:ring-primary/50">
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/10 blur-xl group-hover:bg-primary/20 transition-colors"></div>
+              <div className="flex h-full flex-col p-8">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <span className="material-symbols-outlined text-3xl">visibility</span>
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h3>
+                <p className="mb-8 flex-grow text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Setting the global standard for accessible and adaptive IT environments. Ensuring technology acts as a bridge, not a barrier, for neurodiverse talent worldwide.
+                </p>
+                <div className="relative h-48 w-full overflow-hidden rounded-xl">
+                  <img 
+                    alt="Futuristic network" 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                  />
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="px-4 md:px-40 py-10 flex justify-center">
-        <div className="max-w-[1200px] w-full grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-6">
-            <h2 className="text-white text-3xl font-bold leading-tight">
-              Our Story
-            </h2>
-            <div className="w-16 h-1 bg-primary rounded-full"></div>
-            <div className="flex flex-col gap-4 text-text-secondary text-lg leading-relaxed">
-              <p>
-                Autism's IT Solution began with a simple yet powerful conversation among four friends. We realized that the tech industry, while innovative, often overlooked a massive pool of talent and failed to design truly inclusive experiences.
-              </p>
-              <p>
-                Founded by four visionaries, we set out to change the narrative. We are dedicated to providing top-tier IT solutions that not only empower businesses but also champion neurodiversity in every line of code we write.
-              </p>
-              <p>
-                Today, we stand as a testament that diverse minds build better products. Our journey is just beginning.
-              </p>
-            </div>
+      {/* Core Values */}
+      <section className="bg-white dark:bg-[#0d121c] py-16 border-y border-slate-200 dark:border-slate-800">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <span className="mb-2 block text-sm font-bold uppercase tracking-wider text-primary">Our DNA</span>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Core Values</h2>
           </div>
-          <div className="relative h-[400px] rounded-2xl overflow-hidden border border-border-dark bg-surface-dark group">
-            <img 
-              alt="Team collaborating" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#152211] via-transparent to-transparent"></div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((val, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary shadow-sm">
+                  <span className="material-symbols-outlined text-3xl">{val.icon}</span>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">{val.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{val.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
-      <section className="px-4 md:px-40 py-16 flex justify-center bg-[#1a2b15]">
-        <div className="max-w-[1200px] w-full flex flex-col gap-10">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-white text-3xl font-bold mb-4">Why We Exist</h2>
-            <p className="text-text-secondary">Our guiding principles that drive every decision, every project, and every line of code.</p>
+      {/* Founders Grid */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Meet The Founders</h2>
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">The minds behind the mission.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Mission */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-border-dark bg-surface-dark p-8 hover:border-primary/50 transition-colors duration-300">
-              <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
-                <span className="material-symbols-outlined text-[32px]">flag</span>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {founders.map((founder, idx) => (
+              <div key={idx} className="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-surface-dark shadow-md transition-all hover:-translate-y-1 hover:shadow-xl ring-1 ring-slate-200 dark:ring-slate-800">
+                <div className="aspect-[4/5] w-full overflow-hidden bg-slate-200">
+                  <img 
+                    alt={founder.name} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    src={founder.image}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">{founder.name}</h3>
+                  <p className="text-sm font-medium text-primary">{founder.role}</p>
+                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 line-clamp-3">
+                    {founder.bio}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-white text-xl font-bold">Our Mission</h3>
-              <p className="text-text-secondary leading-relaxed">To provide inclusive, high-quality IT solutions that empower businesses while creating meaningful career pathways for neurodivergent talent.</p>
-            </div>
-            {/* Vision */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-border-dark bg-surface-dark p-8 hover:border-primary/50 transition-colors duration-300">
-              <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
-                <span className="material-symbols-outlined text-[32px]">visibility</span>
-              </div>
-              <h3 className="text-white text-xl font-bold">Our Vision</h3>
-              <p className="text-text-secondary leading-relaxed">A digital world built for everyone, accessible by design, where neurodiversity is recognized as a competitive advantage in innovation.</p>
-            </div>
-            {/* Values */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-border-dark bg-surface-dark p-8 hover:border-primary/50 transition-colors duration-300">
-              <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
-                <span className="material-symbols-outlined text-[32px]">handshake</span>
-              </div>
-              <h3 className="text-white text-xl font-bold">Our Values</h3>
-              <p className="text-text-secondary leading-relaxed">Inclusivity, Radical Transparency, and Technical Excellence. We believe in building trust through capability and kindness.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Founders Section */}
-      <section className="px-4 md:px-40 py-20 flex justify-center">
-        <div className="max-w-[1200px] w-full flex flex-col gap-12">
-          <div className="flex flex-col gap-3">
-            <h2 className="text-white text-3xl font-bold tracking-tight">Meet the Founders</h2>
-            <p className="text-text-secondary max-w-2xl">The visionary team behind Autism's IT Solution, combining diverse expertise to drive change.</p>
+      {/* "Why Us" Accordion Section */}
+      <section className="bg-slate-50 dark:bg-[#151c2a] py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Why Choose Us?</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Founder 1 */}
-            <div className="group flex flex-col items-center p-6 rounded-2xl border border-border-dark bg-surface-dark hover:bg-[#233a1d] transition-all">
-              <div className="size-28 mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
-                <img alt="Alex Chen" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"/>
-              </div>
-              <h3 className="text-white text-lg font-bold">Alex Chen</h3>
-              <span className="text-primary text-sm font-bold mb-3">CEO & Co-Founder</span>
-              <p className="text-text-secondary text-sm text-center leading-relaxed">
-                Driving the strategic vision with a focus on sustainable growth and inclusive leadership practices.
-              </p>
-            </div>
-            {/* Founder 2 */}
-            <div className="group flex flex-col items-center p-6 rounded-2xl border border-border-dark bg-surface-dark hover:bg-[#233a1d] transition-all">
-              <div className="size-28 mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
-                <img alt="Sarah Johnson" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"/>
-              </div>
-              <h3 className="text-white text-lg font-bold">Sarah Johnson</h3>
-              <span className="text-primary text-sm font-bold mb-3">CTO & Co-Founder</span>
-              <p className="text-text-secondary text-sm text-center leading-relaxed">
-                Architecting robust, scalable systems and ensuring technical excellence across all deliverables.
-              </p>
-            </div>
-            {/* Founder 3 */}
-            <div className="group flex flex-col items-center p-6 rounded-2xl border border-border-dark bg-surface-dark hover:bg-[#233a1d] transition-all">
-              <div className="size-28 mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
-                <img alt="Michael Ross" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"/>
-              </div>
-              <h3 className="text-white text-lg font-bold">Michael Ross</h3>
-              <span className="text-primary text-sm font-bold mb-3">Head of Design</span>
-              <p className="text-text-secondary text-sm text-center leading-relaxed">
-                Championing user-centric design and accessibility standards to create seamless experiences for all.
-              </p>
-            </div>
-            {/* Founder 4 */}
-            <div className="group flex flex-col items-center p-6 rounded-2xl border border-border-dark bg-surface-dark hover:bg-[#233a1d] transition-all">
-              <div className="size-28 mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
-                <img alt="Emily Davis" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"/>
-              </div>
-              <h3 className="text-white text-lg font-bold">Emily Davis</h3>
-              <span className="text-primary text-sm font-bold mb-3">Head of Operations</span>
-              <p className="text-text-secondary text-sm text-center leading-relaxed">
-                Ensuring smooth execution of projects and fostering strong, transparent client relationships.
-              </p>
-            </div>
+          <div className="flex flex-col gap-4">
+            {faqItems.map((item, idx) => (
+              <details key={idx} className="group rounded-xl bg-white dark:bg-surface-dark shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 open:ring-primary/50 dark:open:ring-primary/50">
+                <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-medium text-slate-900 dark:text-white">
+                  <span className="text-lg font-bold">{item.title}</span>
+                  <span className="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                </summary>
+                <div className="px-6 pb-6 text-slate-600 dark:text-slate-400">
+                  <p>{item.content}</p>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="px-4 py-20 flex justify-center bg-surface-dark border-t border-border-dark">
-        <div className="max-w-[800px] w-full flex flex-col items-center text-center gap-6">
-          <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight">Ready to Innovate With Us?</h2>
-          <p className="text-text-secondary text-lg max-w-xl">
-            Whether you need a cutting-edge web solution or want to learn more about our inclusive practices, we'd love to hear from you.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <button className="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-green-400 text-[#152211] text-base font-bold transition-all shadow-lg shadow-primary/20">
-              Contact Us
+      {/* CTA Section */}
+      <section className="relative overflow-hidden py-16">
+        <div className="absolute inset-0 bg-primary">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Ready to innovate with us?</h2>
+          <p className="mb-8 text-xl text-blue-100">Join us in building a more inclusive future for technology.</p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button className="h-12 min-w-[160px] rounded-lg bg-white px-6 text-base font-bold text-primary transition-colors hover:bg-blue-50">
+              Partner with Us
             </button>
-            <button className="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-transparent border-2 border-primary text-primary hover:bg-primary/10 text-base font-bold transition-all">
-              View Careers
+            <button className="h-12 min-w-[160px] rounded-lg border-2 border-white bg-transparent px-6 text-base font-bold text-white transition-colors hover:bg-white/10">
+              Contact Support
             </button>
           </div>
         </div>

@@ -1,41 +1,53 @@
 import React from 'react';
 
 const Team = () => {
-  const foundersCount = [1, 2, 3, 4];
+  const teamMembers = [
+    {
+      name: "Web Page",
+      role: "CEO & Co-Founder",
+      quote: "Innovation happens when we listen to every voice.",
+      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      name: "Karl Villar",
+      role: "CTO & Co-Founder",
+      quote: "Building robust systems that are accessible by default.",
+      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+    },
+    {
+      name: "Andrew Czar Mata",
+      role: "Head of Design",
+      quote: "Simplicity and clarity are the ultimate sophistication.",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      name: "Kerbi Cabardo",
+      role: "COO & Co-Founder",
+      quote: "Creating pathways for talent to shine.",
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
+    }
+  ];
 
   return (
-    <section id="team" className="relative bg-background-dark py-12 md:py-24 border-t border-[#2c4823]">
-      <div className="flex justify-center">
-        <div className="flex flex-col max-w-[960px] flex-1 px-4 lg:px-10">
-          <div className="flex flex-col items-center justify-center gap-8 text-center">
-            
-            {/* 4 Co-Founders Visual Hint */}
-            <div className="flex items-center justify-center gap-4 mb-2">
-              {foundersCount.map((_, index) => (
-                <React.Fragment key={index}>
-                  <div className="size-16 rounded-full bg-[#1f3319] border-2 border-[#3f6732] flex items-center justify-center text-[#9fc992] hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined">person</span>
-                  </div>
-                  {index < foundersCount.length - 1 && (
-                    <div className="w-8 h-px bg-[#3f6732] hidden sm:block"></div>
-                  )}
-                </React.Fragment>
-              ))}
+    <section className="px-4 md:px-10 py-20 bg-slate-50 dark:bg-[#151c2b]" id="team">
+      <div className="max-w-[1280px] mx-auto w-full">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet the Minds Behind the Mission</h2>
+          <p className="text-slate-600 dark:text-text-secondary">
+            Our founding team combines decades of IT experience with lived experience, driving innovation through diverse perspectives.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="flex flex-col items-center text-center p-6 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-card-border shadow-sm">
+              <div className="size-32 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
+                <img alt={member.name} className="w-full h-full object-cover" src={member.img} />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{member.name}</h3>
+              <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
+              <p className="text-slate-500 dark:text-text-secondary text-sm">"{member.quote}"</p>
             </div>
-
-            <div className="flex flex-col gap-3 max-w-[600px]">
-              <h2 className="text-white text-3xl font-black leading-tight tracking-[-0.033em] md:text-4xl">
-                Meet the Visionaries
-              </h2>
-              <p className="text-[#cfdfcc] text-lg font-normal leading-relaxed">
-                Founded by four visionaries united by a single mission: to demonstrate the extraordinary capabilities of neurodiverse talent in tech.
-              </p>
-            </div>
-            
-            <button className="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-[#3bd10f] text-background-dark text-base font-bold leading-normal tracking-[0.015em] shadow-[0_0_20px_-5px_rgba(70,236,19,0.4)] hover:shadow-[0_0_30px_-5px_rgba(70,236,19,0.6)] transition-all">
-              <span className="truncate">Meet Our Team</span>
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </section>
